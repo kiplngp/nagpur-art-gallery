@@ -230,6 +230,6 @@ line-height: 14px; margin: 0; padding: 5px 0 7px !important; text-align: center;
 .cart-btn {  background: url("../images/button.gif") no-repeat scroll 0 0 transparent; border: medium none !important; color: #FFFFFF; display: block;  font-size: 12px; font-weight: bold; height: 25px !important; 
 line-height: 14px; margin: 0; padding: 3px 0 7px !important; text-align: center; text-decoration: none; width: 92px; cursor:pointer;}
 
-.cart-bg {background:#81848D}
+.cart-bg {background:#BDBDCE}
 
-
+.cart-box {-moz-border-radius: 9px 9px 9px 9px; background-color: #C8CCD4; width: 100%;}
