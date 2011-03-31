@@ -19,7 +19,7 @@ class HomeController < ApplicationController
   	if @page.nil?
     	redirect_to_index("Wrong post it")	    
     else
-	    
+	    @title = "#{@page.title}"
 	    @meta_title = "Fine Art Gallery | Nagpur Art Gallery - #{@page.title}"
     	  
 	    respond_to do |format|
