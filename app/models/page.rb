@@ -15,7 +15,7 @@ class Page < ActiveRecord::Base
                     :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
                     :path => "public/attachments/pages/:id/:style/:basename.:extension",
                     :convert_options => {
-                          :thumb => "-gravity center -thumbnail 230x178^ -extent 230x178"
+                          :thumb => "-gravity center -thumbnail 152x150^ -extent 152x150"
                       }
   
    
