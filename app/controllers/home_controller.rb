@@ -41,6 +41,7 @@ class HomeController < ApplicationController
 			    
 			    @subcat = SubCategory.find(@artist_photo.subcategory_id)
 			  	@sub_cat_id  = @subcat.id
+			  	@urlname = "#{@artist_photo.urlname}"
 			  	
 			  	@meta_title = "#{@artist.name} | #{@artist_photo.title} | #{@subcat.title}"
 			  	@meta_keywords = "#{@artist.name}, #{@artist_photo.title}, original art, affordable art, fine art gallery,"
