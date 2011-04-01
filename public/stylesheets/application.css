@@ -24,7 +24,7 @@ A.sublink2:hover{ font-family: Verdana; font-size: 11px; text-decoration: none; 
 .footer{color:#FFFFFF;height:30px; margin-bottom:0; padding:11px 0 0; position:absolute; text-align:center;
 top:853px; width:100%; z-index:999999;}
 
-.logo{width:245px; float:left; padding: 15px 0px 0px 15px; display:inline;}
+.logo{width:245px; float:left; padding: 15px 0px 0px 5px; display:inline;}
 .cart{width:733px; float:left; text-align:right; height:20px; display:inline; color:#FFFFFF; padding-bottom:35px;}
 .menu{width:738px; float:left; text-align:right; height:100px; display:inline; color:#FFFFFF}
 .search{width:179px; height:44px; background-image:url(../images/searchbg.png); background-repeat:no-repeat; display:inline; 
