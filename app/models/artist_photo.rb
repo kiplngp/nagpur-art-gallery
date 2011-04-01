@@ -16,7 +16,7 @@ class ArtistPhoto < ActiveRecord::Base
                     :convert_options => {
                       :original => "",
                       :slider =>"-gravity center -thumbnail 390x280^ -extent 480x330",
-                      :medium => "-gravity center -thumbnail 255x250^ -extent 270x250",
+                      :medium => "-gravity center -thumbnail 250x220^ -extent 270x250",
                       :thumb => "-gravity center -thumbnail 75x55^ -extent 85x75"
                       }
    validates_attachment_presence :photo
