@@ -27,7 +27,12 @@
 			
 			
 			</div>
-			<%= link_to image_tag(artist.photo.url(:thumb)), edit_artist_path(artist) %><br>
+				<% if artist.photo.url(:thumb) == "/photos/thumb/missing.png" %> 
+					<img src="/images/default.gif"><br>
+				<% else %>
+				<%= link_to image_tag(artist.photo.url(:thumb)), edit_artist_path(artist) %><br>
+				<% end %>
+				
 			<div class="actions">
 				<%= link_to 'Edit', edit_artist_path(artist) %>
 					| <%= link_to 'Photos', artist %>
