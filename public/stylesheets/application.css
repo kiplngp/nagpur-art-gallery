@@ -236,3 +236,13 @@ line-height: 14px; margin: 0; padding: 3px 0 7px !important; text-align: center;
 .cart-bg {background:#BDBDCE}
 
 .cart-box {-moz-border-radius: 9px 9px 9px 9px; background-color: #C8CCD4; width: 100%;}
+
+.bio{color: #414948;font-size: 15px;font-weight: normal;}
+
+.righttop { background: url("../images/cartbox.jpg") no-repeat scroll 0 0 transparent; font-size: 10px; height: 20px; padding: 0 5px; float: right; top: 0; width: 124px; }
+
+.righttop a { color: #FFFFFF; float: left; text-decoration:none;}
+.righttop a:hover { text-decoration:underline;}
+
+.righttop .basket { background: url("/images/cart.jpg") no-repeat scroll right center transparent; border: medium none; margin: 3px 0 0 4px; padding: 0 20px 0 0; }
+    

@@ -12,7 +12,7 @@
 						<div class="scrollWrapper">
 							<div class="scrollableArea">
 							 <% @artist_photos.each do |artist_photo| %>
-							 	<a href="/artworks/<%= artist_photo.urlname %>">
+							 	<a href="/artworks/<%= artist_photo.urlname %>" title="<%= artist_photo.title %>">
 								<%= image_tag artist_photo.photo.url(:slider), :class=>'slider-img' %></a>
 						   
 							<% end %>

@@ -11,7 +11,7 @@
 				<div class="gallery">
 					
 					<% @artist_photos.each do |artist_photo| %>
-					 
+					
                       <div class="artdiv">
                     	<a href="/artworks/<%= artist_photo.urlname %>"> <%= image_tag artist_photo.photo.url(:thumb), :class=>'dropshadow' %></a><br/><br/>
                     	<%= artist_photo.title%>

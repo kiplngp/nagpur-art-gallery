@@ -18,15 +18,15 @@
 	<div >
 
 	<div class="header">
-		<div class="logo"><a href="/"></a></div>
-		<div class="cart"></div>
+		<div class="logo"><a href="/" alt="Nagpur Art Gallery" title="Nagpur Art Gallery"></a></div>
+		<div class="cart"><div class="righttop"><a href="/cart/checkout" class="basket">VIEW CART</a></div></div>
 		<div class="menu">
 			<div class="menu22">
-				<div class="menuInside wd1"><a href="/" class="topmenu <% if @title == 'Home' %>active <% end %>">Home</a></div> 
-				<div class="menuInside wd2"><a href="/pages/about" class="topmenu <% if @title == 'About Nagpur Art Gallery' %>active <% end %>">About</a> </div>  
-				<div class="menuInside wd3"><a href="/pages/how_it_work" class="topmenu <% if @title == 'How It Works' %>active <% end %>">How It Works</a> </div>  
-				<div class="menuInside wd2"><a href="/artist/artworks" class="topmenu <% if @title == 'Art Works' %>active <% end %>">Art Works</a> </div>  
-				<div class="menuInside wd4"> <a href="/pages/contact" class="topmenu <% if @title == 'Contact' %>active <% end %>">Contact</a></div> 
+				<div class="menuInside wd1"><a href="/" class="topmenu <% if @title == 'Home' %>active <% end %>" title="Home">Home</a></div> 
+				<div class="menuInside wd2"><a href="/pages/about" class="topmenu <% if @title == 'About Nagpur Art Gallery' %>active <% end %>" title="About">About</a> </div>  
+				<div class="menuInside wd3"><a href="/pages/how_it_work" class="topmenu <% if @title == 'How It Works' %>active <% end %>" title="How It Works">How It Works</a> </div>  
+				<div class="menuInside wd2"><a href="/artist/artworks" class="topmenu <% if @title == 'Art Works' %>active <% end %>" title="Art Works">Art Works</a> </div>  
+				<div class="menuInside wd4"> <a href="/pages/contact" class="topmenu <% if @title == 'Contact' %>active <% end %>" title="Contact">Contact</a></div> 
 		  	  </div> 
 				<div class="search">
 					<% form_tag "/artist-artworks/search" do %>

@@ -31,7 +31,7 @@
 				<div style="height:80px;">&nbsp;</div>
 				 <div class="painting">
 					<div style="text-align:center;">
-						<%= image_tag @artist_photo.photo.url(:medium),:class=>'artwork_img' %> <br/>
+						<%= image_tag @artist_photo.photo.url(:medium),{ :title => "#{@artist_photo.title}",:class=>'artwork_img' } %> <br/>
 					</div>
 					<div class="zoom">
 						<%= link_to "#{image_tag("/images/zoom.jpg")}", @artist_photo.photo.url, :rel => 'colorbox' %>

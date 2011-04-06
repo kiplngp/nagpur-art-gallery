@@ -9,9 +9,9 @@
 				<% if artist.photo.url(:thumb) == "/photos/thumb/missing.png" %> 
 					<img src="/images/default.gif">
 				<% else %>
-					<%= image_tag artist.photo.url(:thumb) %> 
+					<%= image_tag artist.photo.url(:thumb),{ :title => "#{artist.name}"} %> 
 				<% end %>         
-				<div class="content_cms"><%= artist.artist_info %></div>
+				<div><span class="bio"><%= artist.name %> Biography</span><br/><%= artist.artist_info %></div>
       		</div>
     	</div>
 		<div id="tab2" class="tab_content">
