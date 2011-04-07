@@ -31,7 +31,7 @@
 				<div class="search">
 					<% form_tag "/artist-artworks/search" do %>
 					    
-						<%= text_field_tag :search_string, nil, :class => 'inputbox' %>
+						<%= text_field_tag "search_string", params['search_string'],  :class => 'inputbox' %>
 						
 						<button class="searchbtn" type="submit"></button>
 						

@@ -10,6 +10,10 @@
 				
 				<div class="gallery">
 					
+					<% if @artist_photos.empty? %>
+					  <p>Record Not Founds</p>
+					<% else %>
+					
 					<% @artist_photos.each do |artist_photo| %>
 					
                       <div class="artdiv">
@@ -17,6 +21,7 @@
                     	<%= artist_photo.title%>
 			      		</div>
 			      	   
+                     <% end %>
                      <% end %>
                   </div>
                   

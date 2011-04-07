@@ -36,7 +36,7 @@ class HomeController < ApplicationController
 	    if @artist_photo.nil?
 	    	redirect_to_index("Wrong post it")
 	    else
-	    
+	    		@title = "Art Works"
 			    @artist = Artist.find(@artist_photo.artist_id)
 			    
 			    @subcat = SubCategory.find(@artist_photo.subcategory_id)
