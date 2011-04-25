@@ -1,7 +1,7 @@
 class Emailer < ActionMailer::Base
     def contact_email(contact)
       setup_email(contact)
-      @subject    += 'conatct-us'
+      @subject    += '#{contact.subject}'
      
     end
 
