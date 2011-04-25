@@ -1,4 +1,49 @@
 		
+		<% if @page.urlname == 'contact' %>
+		<div class="contentinside">
+		<div class= "contact-form" style="width: 328px !important;float: left;">
+				<% form_for :reset_password do |form| %>
+				    <%= form.hidden_field :id, :value => '1' %>
+				      <div>
+				        <%= form.label :name, 'Name: ' %>
+				        <%= form.text_field :name, :size => 40, :class => "inputfld text validate[required,length[2,25]]" %>
+				      </div>
+				      
+				      <div>
+				        <%= form.label :email, 'Email: ' %>
+				        <%= form.text_field :email, :size => 40, :class => "inputfld text validate[required,custom[email]]" %>
+				      </div>
+				
+				
+				      <div>
+				        <%= form.label :subject, 'Subject: ' %>
+				        <%= form.text_field :phone, :size => 40, :class => "inputfld text validate[required,length[2,25]]" %>
+				      </div>
+				      
+				      <div>
+				        <%= form.label :message, 'Message: ' %>
+				        <%= form.text_area :message, :rows => 4, :cols => 34, :class => 'text long validate[required,length[4,200]]' %>
+				      </div>
+				
+					<div style="padding-left:134px;"> <%= submit_tag 'Submit', :class => "submit-btn" %> </div>
+					
+			    <% end %>	
+			</div>
+			
+			<div   class="content-page">
+		  		
+		  		
+		  		
+		  		<div class="maintitle"><%= @page.title %></div>
+		  		<div class="content_cms">
+		  	  	 	<%= decode_entities(@page.body) %>
+		  	  	 </div>
+		  	  	
+		  	</div>
+		</div>
+			
+		<% else %>
+		
 		<div class="contentinside">
 			
 			<% if @page.photo.url(:thumb) != "/photos/thumb/missing.png" %>
@@ -8,7 +53,11 @@
 			</div>
 			<% end %>
 			
-		  	<div <% if @page.photo.url(:thumb) == "/photos/thumb/missing.png" %> class="content-page2" <% else %> class="content-page" <% end %>>
+			
+			
+		  	<div  <% if @page.photo.url(:thumb) == "/photos/thumb/missing.png" %> class="content-page2" <% else %> class="content-page" <% end %>>
+		  		
+		  		
 		  		
 		  		<div class="maintitle"><%= @page.title %></div>
 		  		<div class="content_cms">
@@ -17,4 +66,8 @@
 		  	  	
 		  	</div>
 		</div>
+		
+		<% end %>
+		
+		
 		 

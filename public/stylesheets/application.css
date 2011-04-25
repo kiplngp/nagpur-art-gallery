@@ -245,4 +245,12 @@ line-height: 14px; margin: 0; padding: 3px 0 7px !important; text-align: center;
 .righttop a:hover { text-decoration:underline;}
 
 .righttop .basket { background: url("/images/cart.jpg") no-repeat scroll right center transparent; border: medium none; margin: 3px 0 0 4px; padding: 0 20px 0 0; }
+
+.contact-form label { color: #343838; display: block; font-size: 14px; margin-left: 2.5em;}
+
+.contact-form select, .contact-form textarea, .contact-form .inputfld { margin-left: 2.5em; background-color: #DFE2E5; border: 2px solid #BECBDC; padding: 3px 5px;  margin-bottom: 12px; width: 250px;}
+
+.contact-form legend { background: #81848D; color: #FFFFFF; font-family: sans-serif; font-size: 14px; padding: 6px; margin-bottom: 18px;}
+
+.contact-form fieldset { border:1px solid #81848D;} 
     

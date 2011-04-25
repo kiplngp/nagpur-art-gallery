@@ -16,6 +16,23 @@ class HomeController < ApplicationController
   def showpages
   	@page = Page.find_by_urlname(params[:id])
   	
+  	if request.post? and params[:reset_password]
+	      if contact = Contact.find_by_id(params[:reset_password][:id])
+	        
+	        contact.name = "#{params[:reset_password][:name]}"
+	        contact.email = "#{params[:reset_password][:email]}"
+	        contact.subject = "#{params[:reset_password][:subject]}"
+	        contact.message = "#{params[:reset_password][:message]}"
+	        contact.save
+	        
+	        
+	        Emailer.deliver_contact_email(contact)
+	        
+	        redirect_to_index("Thanks for sending a emails.")
+	        
+	      end
+	    end
+  	
   	if @page.nil?
     	redirect_to_index("Wrong post it")	    
     else
@@ -27,6 +44,9 @@ class HomeController < ApplicationController
 	      format.xml  { render :xml => @page }
 	    end
 	end	
+	
+		
+    
   end
   
   
