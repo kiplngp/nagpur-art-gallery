@@ -33,9 +33,7 @@ class HomeController < ApplicationController
 	      end
 	    end
   	
-  	if @page.nil?
-    	redirect_to_index("Wrong post it")	    
-    else
+  	
 	    @title = "#{@page.title}"
 	    @meta_title = "Fine Art Gallery | Nagpur Art Gallery - #{@page.title}"
     	  
@@ -43,7 +41,7 @@ class HomeController < ApplicationController
 	      format.html # showpages.html.erb
 	      format.xml  { render :xml => @page }
 	    end
-	end	
+	
 	
 		
     
