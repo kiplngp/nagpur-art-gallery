@@ -14,7 +14,7 @@ class HomeController < ApplicationController
   end
   
   def showpages
-  	@page = Page.find_by_urlname(params[:id])
+  	
   	
   	if request.post? and params[:reset_password]
 	      if contact = Contact.find_by_id(params[:reset_password][:id])
@@ -31,17 +31,25 @@ class HomeController < ApplicationController
 	        redirect_to_index("Thanks for sending a emails.")
 	        
 	      end
-	    end
+	      
+	   else
+	   	
+	   	@page = Page.find_by_urlname(params[:id])
+	   	if @page.nil?
+    	redirect_to_index("Wrong post it")	    
+	    else
+		    @title = "#{@page.title}"
+		    @meta_title = "Fine Art Gallery | Nagpur Art Gallery - #{@page.title}"
+	    	  
+		    respond_to do |format|
+		      format.html # showpages.html.erb
+		      format.xml  { render :xml => @page }
+		    end
+		end	
+	   	
+	   end
   	
   	
-	    @title = "#{@page.title}"
-	    @meta_title = "Fine Art Gallery | Nagpur Art Gallery - #{@page.title}"
-    	  
-	    respond_to do |format|
-	      format.html # showpages.html.erb
-	      format.xml  { render :xml => @page }
-	    end
-	
 	
 		
     
