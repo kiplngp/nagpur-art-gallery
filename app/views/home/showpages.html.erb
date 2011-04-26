@@ -6,7 +6,7 @@
 				    <%= form.hidden_field :id, :value => '1' %>
 				      <div>
 				        <%= form.label :name, 'Name: ' %>
-				        <%= form.text_field :name, :size => 40, :class => "inputfld text validate[required,length[2,25]]" %>
+				        <%= form.text_field :name, :size => 40, :class => "inputfld text validate[required,length[2,30]]" %>
 				      </div>
 				      
 				      <div>
@@ -17,12 +17,12 @@
 				
 				      <div>
 				        <%= form.label :subject, 'Subject: ' %>
-				        <%= form.text_field :subject, :size => 40, :class => "inputfld text validate[required,length[2,25]]" %>
+				        <%= form.text_field :subject, :size => 40, :class => "inputfld text validate[required,length[2,50]]" %>
 				      </div>
 				      
 				      <div>
 				        <%= form.label :message, 'Message: ' %>
-				        <%= form.text_area :message, :rows => 4, :cols => 34, :class => 'text long validate[required,length[4,200]]' %>
+				        <%= form.text_area :message, :rows => 4, :cols => 34, :class => 'text long validate[required,length[4,600]]' %>
 				      </div>
 				
 					<div style="padding-left:134px;"> <%= submit_tag 'Submit', :class => "submit-btn" %> </div>
