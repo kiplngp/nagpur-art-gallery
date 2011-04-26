@@ -12,11 +12,11 @@ config.action_mailer.delivery_method = :smtp
 
 # these options are only needed if you choose smtp delivery
 config.action_mailer.smtp_settings = {
-    :address              => 'smtp.gmail.com',
+    :address              => 'imap.gmail.com',
     :port                 => 587,
     :domain               => 'gmail.com',
-    :user_name            => 'chaukadeamol@gmail.com',
-    :password             => 'amol8007',
+    :user_name            => 'info@nagpurartgallery.com',
+    :password             => 'B1a2z3a4a5R6',
     :authentication       => 'login',
     :enable_starttls_auto => true
   }
