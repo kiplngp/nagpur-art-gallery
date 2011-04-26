@@ -12,7 +12,7 @@ config.action_mailer.delivery_method = :smtp
 
 # these options are only needed if you choose smtp delivery
 config.action_mailer.smtp_settings = {
-    :address              => 'imap.gmail.com',
+    :address              => 'smtp.gmail.com',
     :port                 => 587,
     :domain               => 'gmail.com',
     :user_name            => 'info@nagpurartgallery.com',
