@@ -4,11 +4,25 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script>
+    .logo {
+    	display: inline;
+    	float: left;
+    	padding: 20px 0 0 15px;
+    	width: 245px;
+		}
+	.logo a {
+    	background: url("../images/nagpurartgallery.png") repeat-x scroll 0 0 transparent;
+    	display: block;
+    	height: 104px;
+    	width: 233px;
+		}
+    </script>
     
 </head>
 <body>
 
-
+		<div class="logo"><a href="/" alt="Nagpur Art Gallery" title="Nagpur Art Gallery"></a></div>
 	
 	    <p>Name : <%= @contact.name %></p>
 	    <p>Email : <%= @contact.email %></p>
