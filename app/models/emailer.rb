@@ -9,7 +9,7 @@ class Emailer < ActionMailer::Base
       def setup_email(contact)
         @recipients  = "#{contact.email}"
         @from        = "chaukadeamol@gmail.com"
-        @subject     = "Nagpur Art Gallery - Contact Us:  "
+        @subject     = "Nagpur Art Gallery - Contact Us: #{contact.subject} "
         @sent_on     = Time.now
         @content_type = "text/html"
         @body[:contact] = contact
