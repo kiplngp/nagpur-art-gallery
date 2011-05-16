@@ -14,7 +14,7 @@ class ArtistPhoto < ActiveRecord::Base
                      :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
                     :path => "public/attachments/artist-photos/:id/:style/:basename.:extension",
                     :convert_options => {
-                      :original => "-gravity center -thumbnail 900x620^ -extent 900x620",
+                      :original => "-gravity center -thumbnail 900x620^",
                       :slider =>"-gravity center -thumbnail 390x280^ -extent 480x330",
                       :medium => "-gravity center -thumbnail 230x215^ -extent 270x250",
                       :thumb => "-gravity center -thumbnail 75x55^ -extent 85x75"
