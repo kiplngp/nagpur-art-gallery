@@ -1,7 +1,7 @@
 class Artist < ActiveRecord::Base
   
   
-  validates_presence_of :name, :artist_info, :contact_person
+  validates_presence_of :name, :artist_info
   validates_uniqueness_of :name
   validates_length_of :name, :within => 2..100
   validates_length_of :artist_info, :within => 5..10000
