@@ -13,6 +13,7 @@ class ArtistPhoto < ActiveRecord::Base
                     :styles => { :original => "", :slider =>"", :medium => "", :thumb => "" },
                      :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
                     :path => "public/attachments/artist-photos/:id/:style/:basename.:extension",
+                    :processor => "mini_magick",
                     :convert_options => {
                       :original => "-gravity center -thumbnail 900x550^",
                       :slider =>"-background white -gravity center -extent 480x330",
