@@ -10,14 +10,14 @@ class ArtistPhoto < ActiveRecord::Base
   validates_length_of :title, :within => 2..100
    
   has_attached_file :photo, 
-                    :styles => { :original => "", :slider =>"480x330", :medium => "", :thumb => "" },
+                    :styles => { :original => "860x550", :slider =>"480x330", :medium => "270x250", :thumb => "85x75" },
                      :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
                     :path => "public/attachments/artist-photos/:id/:style/:basename.:extension",
                     :convert_options => {
-                      :original => "-gravity center -thumbnail 860x550^",
+                      :original => "-background '#C7CCD2' -compose Copy -gravity center -extent 860x550",
                       :slider =>"-background '#C7CCD2' -compose Copy -gravity center -extent 480x330",
-                      :medium => "-gravity center -thumbnail 230x215^ -extent 270x250",
-                      :thumb => "-gravity center -thumbnail 75x55^ -extent 85x75"
+                      :medium => "-background '#C7CCD2' -compose Copy -gravity center -extent 270x250",
+                      :thumb => "-background '#C7CCD2' -compose Copy -gravity center -extent 85x75"
                       }
    validates_attachment_presence :photo
    validates_attachment_size :photo, :less_than => 5000000                   
