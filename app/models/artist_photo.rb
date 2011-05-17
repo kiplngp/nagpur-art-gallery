@@ -15,7 +15,7 @@ class ArtistPhoto < ActiveRecord::Base
                     :path => "public/attachments/artist-photos/:id/:style/:basename.:extension",
                     :convert_options => {
                       :original => "-gravity center -thumbnail 860x550^",
-                      :slider =>"-background skyblue -compose Copy -gravity center -extent 480x330",
+                      :slider =>"-background '#C7CCD2' -compose Copy -gravity center -extent 480x330",
                       :medium => "-gravity center -thumbnail 230x215^ -extent 270x250",
                       :thumb => "-gravity center -thumbnail 75x55^ -extent 85x75"
                       }
