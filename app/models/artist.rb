@@ -8,11 +8,11 @@ class Artist < ActiveRecord::Base
   
   
   has_attached_file :photo, 
-                    :styles => { :thumb => "" },
+                    :styles => { :thumb => "85x75" },
                      :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
                     :path => "public/attachments/artists/:id/:style/:basename.:extension",
                     :convert_options => {
-                          :thumb => "-gravity center -thumbnail 85x75^ -extent 85x75"
+                          :thumb => "-background '#C7CCD2' -compose Copy -gravity center -extent 85x75"
                       }
                    
   

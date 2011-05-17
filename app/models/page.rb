@@ -11,11 +11,11 @@ class Page < ActiveRecord::Base
   validates_length_of :keyword, :within => 3..200, :allow_blank => true
   
   has_attached_file :photo, 
-                    :styles => { :thumb => "" },
+                    :styles => { :thumb => "230x178" },
                     :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
                     :path => "public/attachments/pages/:id/:style/:basename.:extension",
                     :convert_options => {
-                          :thumb => "-gravity center -thumbnail 230x178^ -extent 230x178"
+                          :thumb => "-background '#C7CCD2' -compose Copy -gravity center -extent 230x178"
                       }
   
    
