@@ -119,7 +119,7 @@ class HomeController < ApplicationController
   
   def search
   	
-  		 @artist = Artist.find(:all, :conditions=>['title LIKE ?', "%#{params[:search_string]}%"])
+  		 @artist = Artist.find(:all, :conditions=>['name LIKE ?', "%#{params[:search_string]}%"])
   	  @artist_photos = ArtistPhoto.find_all_by_artist_id(@artist.id)
   	  
   	  
