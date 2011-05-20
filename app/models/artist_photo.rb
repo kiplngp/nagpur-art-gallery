@@ -11,8 +11,7 @@ class ArtistPhoto < ActiveRecord::Base
    
   has_attached_file :photo, 
                     :styles => { :original => "860x550", :slider =>"480x330", :medium => "270x250", :thumb => "85x75" },
-                     :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-                    :path => "public/attachments/artist-photos/:id/:style/:basename.:extension",
+                    
                     :convert_options => {
                       :original => "-background '#C7CCD2' -compose Copy -gravity center -extent 860x550",
                       :slider =>"-background '#C7CCD2' -compose Copy -gravity center -extent 480x330",
