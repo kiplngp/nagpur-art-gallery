@@ -96,6 +96,7 @@ class HomeController < ApplicationController
   end
   
   def showcat
+  	
   	@artist_photos = ArtistPhoto.find_all_by_subcategory_id(params[:id])
   	
   	@subcat = SubCategory.find(params[:id])
@@ -118,7 +119,9 @@ class HomeController < ApplicationController
   end
   
   def search
-  	  @artist_photos = ArtistPhoto.find(:all, :conditions=>['title LIKE ?', "%#{params[:search_string]}%"])
+  	
+  	  @artist = Artist.find(:all, :conditions=>['name LIKE ?', "%#{params[:search_string]}%"])
+  	  @artist_photos = ArtistPhoto.find_all_by_artist_id(@artist.id)
   	  
   	  
   	  
