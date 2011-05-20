@@ -118,7 +118,9 @@ class HomeController < ApplicationController
   end
   
   def search
-  	  @artist_photos = ArtistPhoto.find(:all, :conditions=>['title LIKE ?', "%#{params[:search_string]}%"])
+  	
+  		 @artist = Artist.find(:all, :conditions=>['title LIKE ?', "%#{params[:search_string]}%"])
+  	  @artist_photos = ArtistPhoto.find_all_by_artist_id(@artist.id)
   	  
   	  
   	  
