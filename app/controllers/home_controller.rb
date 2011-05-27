@@ -118,13 +118,11 @@ class HomeController < ApplicationController
   end
   
   def search
-  	  @artist_photos = ArtistPhoto.find(:all, :conditions=>['title LIKE ?', "%#{params[:search_string]}%"])
-  	  
-  	  
+  	  @artists = Artist.find(:all, :conditions=>['name LIKE ?', "%#{params[:search_string]}%"])
   	  
   	  respond_to do |format|
       format.html # artwork.html.erb
-      format.xml  { render :xml => @artist_photos }
+      format.xml  { render :xml => @artists }
     end 
   end
   

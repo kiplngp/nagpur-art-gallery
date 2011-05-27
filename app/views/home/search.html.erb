@@ -10,16 +10,15 @@
 				
 				<div class="gallery">
 					
-					<% if @artist_photos.empty? %>
+					<% if @artists.empty? %>
 					  <p style="color: #5A6563;">Record Not Founds</p>
 					<% else %>
 					
-					<% @artist_photos.each do |artist_photo| %>
+					<% @artists.each do |artist| %>
 					
-                      <div class="artdiv">
-                    	<a href="/artworks/<%= artist_photo.urlname %>"> <%= image_tag artist_photo.photo.url(:thumb), :class=>'dropshadow' %></a><br/><br/>
-                    	<%= artist_photo.title%>
-			      		</div>
+						<%= render :partial =>"artist_search", :locals=>{:artist_photos=>ArtistPhoto.find_all_by_artist_id(artist.id)} %>
+					
+                    
 			      	   
                      <% end %>
                      <% end %>
