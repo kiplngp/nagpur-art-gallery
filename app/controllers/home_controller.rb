@@ -118,7 +118,7 @@ class HomeController < ApplicationController
   end
   
   def search
-  	  @artists = Artist.find(:all, :conditions=>['LOWER (name) LIKE ?', "%#{params[:search_string]}%"])
+  	  @artists = Artist.find(:all, :conditions=>["LOWER (name) LIKE ? OR name LIKE ?", "%#{params[:search_string]}%" , "%#{params[:search_string]}%"])
   	  
   	  respond_to do |format|
       format.html # artwork.html.erb
