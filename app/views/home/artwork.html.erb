@@ -78,6 +78,7 @@
        				
        				<%= render :partial =>"artist_portfolio", :locals=>{:artist_photos=>ArtistPhoto.find_all_by_artist_id(@artist_photo.artist_id)} %>
 					<div class="complete-portfolio"><a href='/portfolio/artist/<%= @artist_photo.artist_id %>'><img src="/images/complete_portfolio.png"></a></div>	
+					<div style="position: absolute;"><iframe src="http://www.facebook.com/plugins/like.php?app_id=197082723671636&amp;href&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=dark&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe></div>
        			</div>
      		</div>
 			<!--right-->
