@@ -47,7 +47,7 @@
 					    <% end %>
 					    <% if @artist_photo.price.nil? %>
 					    <% else %>
-					    <p class="price"><strong>Price:</strong> <span id="show_price"><%= @artist_photo.price %></span>
+					    <p class="price"><strong>Price:</strong> <span id="show_price">Rs - <%= @artist_photo.price %></span>
 					    	<% form_remote_tag :url => { :action => 'add_to_cart', :id =>  @artist_photo.id } do %>
 					    	
 					    	   <button class="buynow" type="submit"></button>
