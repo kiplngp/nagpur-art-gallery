@@ -213,7 +213,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  { background: #D7DAE0; b
 
 .searchbtn {background-image:url(../images/search.png); width:20px; height:23px; cursor:pointer; border: medium none;}
 
-.price { background-color: #FAF6ED; border: 1px solid #50545C; font-size: 14px; padding: 7px; text-align: center; width: 135px; height:17px; }
+.price { background-color: #FAF6ED; border: 1px solid #50545C; font-size: 14px; padding: 7px; text-align: center; width: 148px; height:17px; }
 
 .buynow {background:url(../images/addtocart.png) no-repeat scroll 0 0 transparent; height: 28px; width: 116px; cursor:pointer; border: medium none;}
 
