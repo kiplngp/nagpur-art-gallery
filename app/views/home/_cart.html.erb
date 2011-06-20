@@ -4,7 +4,7 @@
   
   <tr class="total-line cart-bg">
     <td colspan="2">Total</td>
-    <td class="total-cell"><%= number_to_currency(cart.total_price) %></td>
+    <td class="total-cell"><%= number_to_currency(cart.total_price, :unit => "R$ ", :separator => ",", :delimiter => ".") %></td>
   </tr>
 </table >
 <table width="100%">

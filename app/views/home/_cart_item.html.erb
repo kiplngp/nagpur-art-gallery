@@ -5,5 +5,5 @@
 <% end %>
   <td><%= cart_item.quantity %>&times;</td>
   <td><%=h cart_item.title %></td>
-  <td class="item-price"><%= number_to_currency(cart_item.price) %></td>
+  <td class="item-price"><%= number_to_currency(cart_item.price, :unit => "R$ ", :separator => ",", :delimiter => ".") %></td>
 </tr>
