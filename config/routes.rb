@@ -35,7 +35,9 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/artist-artworks/search', :controller=>'home', :action=> 'search'
   
   map.connect '/artworks/cart/:id', :controller=>'home', :action=> 'add_to_cart'  
-  map.connect '/cart/checkout', :controller=>'home', :action=> 'checkout'
+  map.connect '/cart/domestic', :controller=>'home', :action=> 'domestic'
+  map.connect '/cart/international', :controller=>'home', :action=> 'international'
+  map.connect '/cart/payment', :controller=>'home', :action=> 'payment'
   map.connect '/cart/save_order', :controller=>'home', :action=> 'save_order'
   
   map.resources :messages

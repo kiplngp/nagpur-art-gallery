@@ -1,0 +1,47 @@
+
+
+</script>
+	<div class="contentinside">
+			
+			<div class="lefter">
+				
+				<div id="side">
+		        <% if @cart %>
+		          <% hidden_div_if(@cart.items.empty?, :id => "cart") do %>
+		            <%= render(:partial => "cart", :object => @cart) %>
+		          <% end %>
+		        <% end %>
+		       </div>
+		       
+					<div id="navigation">
+						<%= render :partial =>"shared/category_list", :locals=>{:categories=>Category.all} %>
+					</div>
+			</div>
+			<div class="mid-content">
+				<div class="depot-form">
+				
+				  
+				
+				  
+				    <fieldset>
+				      <legend>Mode of Payment</legend>
+				
+				     <table width="100%">
+				     	<tr>
+				     		<td style="font-weight: bold; width:50%" valign="top">1)For Indian payments All payments are to be made in the favour of Nagpur Art Gallery by way of cheque payable at Nagpur ( Maharashtra).</td>
+				     		<td style="font-weight: bold; width:50%" valign="top">2)For International Payments Kindly make payment through paypal.</td>
+				     	</tr>
+				     	<tr><td colspan="2"></td></tr>
+				     	<tr>
+				     		<td><%= button_to 'For Domestic', {:action => 'domestic'}, :class => 'paymentbtn' %></td>
+				     		<td><%= button_to 'For International', {:action => 'international'}, :class => 'paymentbtn' %></td>
+				     	</tr>
+				     	
+				     </table>
+				    
+				    </fieldset>
+				  
+				</div>
+			</div>
+						  
+		</div>

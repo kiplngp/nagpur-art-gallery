@@ -1,0 +1,45 @@
+	<div class="contentinside">
+			
+			<div class="lefter">
+				
+				<div id="side">
+		        <% if @cart %>
+		          <% hidden_div_if(@cart.items.empty?, :id => "cart") do %>
+		            <%= render(:partial => "cart", :object => @cart) %>
+		          <% end %>
+		        <% end %>
+		       </div>
+		       
+					<div id="navigation">
+						<%= render :partial =>"shared/category_list", :locals=>{:categories=>Category.all} %>
+					</div>
+			</div>
+			<div class="mid-content">
+				<div class="depot-form">
+				
+				  <%= error_messages_for 'order' %>
+				
+				  
+				    <fieldset>
+				      <legend>The details are</legend>
+				
+				      <div>
+				        <p>PAYABLE TO : </p>
+
+							<p><strong>KUNAL INFOTECH PVT. LTD.</strong></p>
+							
+							<p>BANK: HDFC A/C NO: 01022560007180 </p>
+							
+							<p>IFSC CODE: HDFC0000102 </p>
+							
+							<p>* Featured Listing activation subject to payment realization.</p>
+				      </div>
+				      
+				      
+				      
+				    </fieldset>
+				  
+				</div>
+			</div>
+						  
+		</div>

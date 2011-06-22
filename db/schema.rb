@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110425103447) do
+ActiveRecord::Schema.define(:version => 20110621100518) do
 
   create_table "artist_photos", :force => true do |t|
     t.string   "artist_id"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20110425103447) do
     t.integer  "subcategory_id"
     t.integer  "set_slider"
     t.decimal  "price"
+    t.decimal  "indian_price"
   end
 
   create_table "artists", :force => true do |t|

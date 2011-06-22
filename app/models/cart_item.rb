@@ -15,9 +15,15 @@ class CartItem
   def title
     @artist_photo.title
   end
+  
+  def indian_price
+    @artist_photo.indian_price * @quantity
+  end
 
   def price
     @artist_photo.price * @quantity
   end
+  
+  
 
 end

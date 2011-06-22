@@ -148,11 +148,27 @@ class HomeController < ApplicationController
     end
   end
 
-  def checkout
+  def international
     if @cart.items.empty?
       redirect_to_index("Your cart is empty")
     else
       @order = Order.new
+    end
+  end
+  
+  def payment
+  	if @cart.items.empty?
+      redirect_to_index("Your cart is empty")
+    else
+    	
+    end
+  end
+  
+  def domestic
+  	if @cart.items.empty?
+      redirect_to_index("Your cart is empty")
+    else
+    	
     end
   end
 

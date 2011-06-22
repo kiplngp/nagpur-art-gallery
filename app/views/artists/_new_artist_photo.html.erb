@@ -19,9 +19,13 @@
 	  	<%= f.file_field :photo, :class => 'Upload Gallery Image (Should be 275x200 pixels)' %>
 	  </p>
 	  <p>
-    	<%= f.label :price %><br />
+    	<%= f.label :price, "Domestic Price" %><br />
+    	<%= f.text_field :indian_price %>
+ 	 </p>
+	  <p>
+    	<%= f.label :price, "International Price" %><br />
     	<%= f.text_field :price %>
-  	 </p>
+ 	 </p>
 	  <p>
 	    <%= f.label :dimension %>
 	    <%= f.text_field :dimension %>
