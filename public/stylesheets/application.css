@@ -274,7 +274,7 @@ line-height: 14px; margin: 0; padding: 3px 0 7px !important; text-align: center;
     text-decoration: none;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     background-color: #0C0D0E;
-    background-image: url("http://morning-flower-642.heroku.com/images/bg-lite.png");
+    background-image: url("/images/bg-lite.png");
     border-color: #0C0D0E;
     color: #FFFFFF;
 }
