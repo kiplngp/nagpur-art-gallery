@@ -55,11 +55,7 @@
 					    	</span><br/>
 					    	<span style="font-size:9px; font-weight:bold;">($ <%= @artist_photo.price %>)</span>
 					    </p> 	
-					    	<% form_remote_tag :url => { :action => 'add_to_cart', :id =>  @artist_photo.id } do %>
 					    	
-					    	   <button class="buynow" type="submit"></button>
-        						
-      						<% end %>
 						
 						<% end %>
 					</div><br />
