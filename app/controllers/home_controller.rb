@@ -114,7 +114,7 @@ class HomeController < ApplicationController
   end
     
   def artistwork
-    	redirect_to("/artworks/artist-categories/1") 
+    	redirect_to("/artworks/artist-categories/2") 
   end
   
   def search
