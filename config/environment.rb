@@ -8,7 +8,8 @@ Rails::Initializer.run do |config|
   config.i18n.default_locale = :en
   config.active_record.partial_updates = true
   
-
+  config.gem 'mislav-will_paginate', :version => '~> 2.2.3', :lib => 'will_paginate', :source => 'http://gems.github.com'
+  
 #  YAML.load_file("#{Rails.root}/config/s3.yml")[Rails.env]["bucket"]
   config.middleware.use "NoWWW" if RAILS_ENV == 'development'
   

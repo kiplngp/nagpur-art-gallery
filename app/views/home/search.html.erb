@@ -16,14 +16,18 @@
 					
 					<% @artists.each do |artist| %>
 					
-						<%= render :partial =>"artist_search", :locals=>{:artist_photos=>ArtistPhoto.find_all_by_artist_id(artist.id)} %>
+						<%= render :partial =>"artist_search", :locals=>{:artist_photos=>ArtistPhoto.find_all_by_artist_id(artist.id).paginate(:per_page => 4, :page => params[:page])} %>
 					
                     
 			      	   
                      <% end %>
                      <% end %>
-                  </div>
+                 
                   
-             </div>   
+
+				
+             		</div>
+			       </div>   
+			       
 						  
 		</div>

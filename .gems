@@ -1,2 +1,4 @@
 rails --version=2.3.9
 aws-s3
+
+with-or-without-www --version=0.0.1
