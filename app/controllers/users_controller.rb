@@ -8,10 +8,12 @@ class UsersController < ApplicationController
     @messages = @user.messages.get(params[:page])
   end
   
+  
   def new
     @user = User.new
   end
  
+ # Create a new user (sign up functionality)
   def create
     logout_keeping_session!
     @user = User.new(params[:user])
@@ -24,9 +26,11 @@ class UsersController < ApplicationController
     end
   end
 
+
   def edit
     @user = current_user
   end
+  
   
   def update
     @user = current_user

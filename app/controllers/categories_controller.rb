@@ -2,8 +2,7 @@ class CategoriesController < ApplicationController
 
    before_filter :login_required, :except => [ ]
    
-  # GET /categories
-  # GET /categories.xml
+  
   def index
     @categories = Category.all
 
@@ -13,8 +12,7 @@ class CategoriesController < ApplicationController
     end
   end
 
-  # GET /categories/1
-  # GET /categories/1.xml
+
   def show
     @category = Category.find(params[:id])
 
@@ -24,8 +22,7 @@ class CategoriesController < ApplicationController
     end
   end
 
-  # GET /categories/new
-  # GET /categories/new.xml
+
   def new
     @category = Category.new
 
@@ -35,13 +32,12 @@ class CategoriesController < ApplicationController
     end
   end
 
-  # GET /categories/1/edit
+  
   def edit
     @category = Category.find(params[:id])
   end
 
-  # POST /categories
-  # POST /categories.xml
+ 
   def create
     @category = Category.new(params[:category])
 
@@ -57,8 +53,7 @@ class CategoriesController < ApplicationController
     end
   end
 
-  # PUT /categories/1
-  # PUT /categories/1.xml
+  
   def update
     @category = Category.find(params[:id])
 
@@ -74,8 +69,7 @@ class CategoriesController < ApplicationController
     end
   end
 
-  # DELETE /categories/1
-  # DELETE /categories/1.xml
+ 
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
@@ -86,6 +80,7 @@ class CategoriesController < ApplicationController
     end
   end
   
+  # Add Sub Category
   def addsubcat
       @category = Category.find(params[:id])
   end

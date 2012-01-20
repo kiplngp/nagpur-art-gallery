@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 	
 	before_filter :find_cart, :except => :empty_cart
   
+  # slider on home page
   def index
     @artist_photos = ArtistPhoto.find(:all, :conditions=>"set_slider='1'")
     @title = "Home"
@@ -13,9 +14,10 @@ class HomeController < ApplicationController
     
   end
   
+
+  
+  #Show static page
   def showpages
-  	
-  	
   	if request.post? and params[:reset_password]
 	      if contact = Contact.find_by_id(params[:reset_password][:id])
 	        
@@ -45,17 +47,12 @@ class HomeController < ApplicationController
 		      format.html # showpages.html.erb
 		      format.xml  { render :xml => @page }
 		    end
-		end	
-	   	
-	   end
-  	
-  	
-	
-		
-    
+		end	  	
+	 end
   end
   
-  
+
+ #show artwork (Artist Information and his works)
   def artwork
     @artist_photo = ArtistPhoto.find_by_urlname(params[:id])
     
@@ -82,6 +79,7 @@ class HomeController < ApplicationController
 	end
 	
   
+  # Show details Portfolio
   def portfolio
   	 @artist_photos = ArtistPhoto.find_all_by_artist_id(params[:id])
   	 
@@ -95,6 +93,9 @@ class HomeController < ApplicationController
     end
   end
   
+  
+  
+ # Artist Category
   def showcat
   	@artist_photos = ArtistPhoto.find_all_by_subcategory_id(params[:id])
   	
@@ -112,11 +113,13 @@ class HomeController < ApplicationController
       format.xml  { render :xml => @artist_photos }
     end
   end
-    
+   
+  # Artwork 
   def artistwork
     	redirect_to("/artworks/artist-categories/2") 
   end
   
+  #Search artist 
   def search
   	  @artists = Artist.find(:all, :conditions=>["LOWER (name) LIKE ? OR name LIKE ?", "%#{params[:search_string]}%" , "%#{params[:search_string]}%"])
   	  respond_to do |format|
@@ -125,7 +128,7 @@ class HomeController < ApplicationController
     end 
   end
   
-  
+  # Add to cart functionality
   def add_to_cart
     artist_photo = ArtistPhoto.find(params[:id])
     @current_item = @cart.add_product(artist_photo)
@@ -138,6 +141,7 @@ class HomeController < ApplicationController
     redirect_to_index "Invalid Artworks"
   end
   
+  # Empty cart
   def empty_cart
     session[:cart] = nil
     find_cart
@@ -147,6 +151,8 @@ class HomeController < ApplicationController
     end
   end
 
+
+  #For Internation payment
   def international
     if @cart.items.empty?
       redirect_to_index("Your cart is empty")
@@ -163,6 +169,7 @@ class HomeController < ApplicationController
     end
   end
   
+  # For Domestic payment
   def domestic
   	if @cart.items.empty?
       redirect_to_index("Your cart is empty")
@@ -171,6 +178,7 @@ class HomeController < ApplicationController
     end
   end
 
+  # For Save order in order table
   def save_order
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(@cart)
@@ -184,11 +192,12 @@ class HomeController < ApplicationController
     end
   end
 
-protected
-  def authorize
-  end
+# Check authentication
+  protected
+    def authorize
+    end
 
-private
+    private
   
   def find_cart
     @cart = session[:cart] ||= Cart.new # return an existing or new cart
@@ -200,8 +209,6 @@ private
   end
   
   
-  
-    
   def fail
     redirect_to '/500.html'
   end

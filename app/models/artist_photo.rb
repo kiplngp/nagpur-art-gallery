@@ -9,6 +9,7 @@ class ArtistPhoto < ActiveRecord::Base
   validates_length_of :code, :within => 2..25
   validates_length_of :title, :within => 2..100
    
+  # Attached file are Stored on Amazon S3
   has_attached_file :photo, 
                     :styles => { :original => "860x550", :slider =>"480x330", :medium => "270x250", :thumb => "85x75" },
                      :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",

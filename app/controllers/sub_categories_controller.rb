@@ -2,8 +2,7 @@ class SubCategoriesController < ApplicationController
 
    before_filter :login_required, :except => [ ]
    
-  # GET /sub_categories
-  # GET /sub_categories.xml
+ 
   def index
     @sub_categories = SubCategory.all
 
@@ -13,8 +12,7 @@ class SubCategoriesController < ApplicationController
     end
   end
 
-  # GET /sub_categories/1
-  # GET /sub_categories/1.xml
+  
   def show
     @sub_category = SubCategory.find(params[:id])
 
@@ -24,8 +22,7 @@ class SubCategoriesController < ApplicationController
     end
   end
 
-  # GET /sub_categories/new
-  # GET /sub_categories/new.xml
+  
   def new
     @sub_category = SubCategory.new
 
@@ -35,13 +32,12 @@ class SubCategoriesController < ApplicationController
     end
   end
 
-  # GET /sub_categories/1/edit
+ 
   def edit
     @sub_category = SubCategory.find(params[:id])
   end
 
-  # POST /sub_categories
-  # POST /sub_categories.xml
+  
   def create
     @sub_category = SubCategory.new(params[:sub_category])
 
@@ -57,8 +53,7 @@ class SubCategoriesController < ApplicationController
     end
   end
 
-  # PUT /sub_categories/1
-  # PUT /sub_categories/1.xml
+  
   def update
     @sub_category = SubCategory.find(params[:id])
 
@@ -74,8 +69,7 @@ class SubCategoriesController < ApplicationController
     end
   end
 
-  # DELETE /sub_categories/1
-  # DELETE /sub_categories/1.xml
+ 
   def destroy
     @sub_category = SubCategory.find(params[:id])
     @sub_category.destroy

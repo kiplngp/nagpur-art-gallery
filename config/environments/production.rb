@@ -15,8 +15,8 @@ config.action_mailer.smtp_settings = {
     :address              => 'smtp.gmail.com',
     :port                 => 587,
     :domain               => 'imap.gmail.com',
-    :user_name            => 'info@nagpurartgallery.com',
-    :password             => 'B1a2z3a4a5R6',
+    :user_name            => '<username>',
+    :password             => '<password>',
     :authentication       => 'login',
     :enable_starttls_auto => true
   }

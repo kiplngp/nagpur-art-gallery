@@ -17,6 +17,7 @@ class Cart
     @items.sum { |item| item.quantity }
   end
 
+ # Add painting on your cart
   def add_product(artist_photo)
     current_item = @items.find {|item| item.artist_photo == artist_photo}
     if current_item

@@ -2,8 +2,9 @@ class SessionsController < ApplicationController
 
   def new
   	
-   end
+  end
 
+ # Check authentication (Sign in functionality)
   def create
     logout_keeping_session!
     user = User.authenticate(params[:login], params[:password])
@@ -22,7 +23,7 @@ class SessionsController < ApplicationController
   end
 
    
-
+ # destroy session (Sign out functionality)
   def destroy
     logout_killing_session!
     redirect_back_or_default('/admin/login')

@@ -1,15 +1,15 @@
 common: &common
-    access_key_id: AKIAIWWQF5REKTC4ZYGQ
-    secret_access_key: qr8M0RpbdDP9yCECZAMEgz/uylJutQO0SvTeTroV
+    access_key_id: your_access_key_id
+    secret_access_key: your_secret_access_key
 
 development:
     <<: *common
-    bucket: nagpurart
+    bucket: bucket_name
 
 test:
     <<: *common
-    bucket: myapp-123-test
+    bucket: bucket_name_test
 
 production:
     <<: *common
-    bucket: nagpurart
+    bucket: bucket_name_production

@@ -2,8 +2,8 @@ class ArtistsController < ApplicationController
 	
   before_filter :login_required, :except => [ ]
   
-  # GET /artists
-  # GET /artists.xml
+  
+  # Get artists
   def index
     @artists = Artist.all
 
@@ -13,8 +13,8 @@ class ArtistsController < ApplicationController
     end
   end
 
-  # GET /artists/1
-  # GET /artists/1.xml
+  
+  # Show artists information
   def show
     @artist = Artist.find(params[:id])
 
@@ -24,8 +24,8 @@ class ArtistsController < ApplicationController
     end
   end
 
-  # GET /artists/new
-  # GET /artists/new.xml
+  
+
   def new
     @artist = Artist.new
     @category = Category.all
@@ -36,14 +36,7 @@ class ArtistsController < ApplicationController
     end
   end
 
-  # GET /artists/1/edit
-  def edit
-    @artist = Artist.find(params[:id])
-    @category = Category.all
-  end
 
-  # POST /artists
-  # POST /artists.xml
   def create
     @artist = Artist.new(params[:artist])
 
@@ -58,9 +51,15 @@ class ArtistsController < ApplicationController
       end
     end
   end
+  
 
-  # PUT /artists/1
-  # PUT /artists/1.xml
+  
+   def edit
+     @artist = Artist.find(params[:id])
+     @category = Category.all
+   end
+   
+ 
   def update
     @artist = Artist.find(params[:id])
 
@@ -76,8 +75,7 @@ class ArtistsController < ApplicationController
     end
   end
 
-  # DELETE /artists/1
-  # DELETE /artists/1.xml
+  
   def destroy
     @artist = Artist.find(params[:id])
     @artist.destroy
@@ -88,12 +86,11 @@ class ArtistsController < ApplicationController
     end
   end
   
+  #Show Photo
   def showphoto
       @artist = Artist.find(params[:id])
       @subcategory = SubCategory.find_all_by_category_id(@artist.category_id)
   end
   
-  def addsubcat
-  	
-  end
+  
 end

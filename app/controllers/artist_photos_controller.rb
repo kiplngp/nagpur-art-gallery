@@ -2,15 +2,13 @@ class ArtistPhotosController < ApplicationController
 	
    before_filter :login_required, :except => [ ]
    
-  # GET /artist_photos
-  # GET /artist_photos.xml
+  
   def index
     @artist_photos = Artist.find_by_urlname(params[:id])
     
   end
 
-  # GET /artist_photos/1
-  # GET /artist_photos/1.xml
+  # Show Artwork
   def show
     @artist_photo = ArtistPhoto.find_by_urlname(params[:id])
 
@@ -20,19 +18,8 @@ class ArtistPhotosController < ApplicationController
     end
   end
 
+ 
   
-
-  # GET /artist_photos/1/edit
-  def edit
-    @artist_photo = ArtistPhoto.find_by_urlname(params[:id])
-    @category = Category.all
-    @subcategory = SubCategory.find_all_by_category_id(@artist_photo.category_id)
-    @title = "artist_photos"
-  end
-  
-  
-  # GET /artist_photos/new
-  # GET /artist_photos/new.xml
   def new
     @artist_photo = ArtistPhoto.new
 
@@ -41,9 +28,8 @@ class ArtistPhotosController < ApplicationController
       format.xml  { render :xml => @artist_photo }
     end
   end
-
-  # POST /artist_photos
-  # POST /artist_photos.xml
+  
+  
   def create
     @artist_photo = ArtistPhoto.new(params[:artist_photo])
 
@@ -59,8 +45,16 @@ class ArtistPhotosController < ApplicationController
     end
   end
 
-  # PUT /artist_photos/1
-  # PUT /artist_photos/1.xml
+ 
+   def edit
+     @artist_photo = ArtistPhoto.find_by_urlname(params[:id])
+     @category = Category.all
+     @subcategory = SubCategory.find_all_by_category_id(@artist_photo.category_id)
+     @title = "artist_photos"
+   end
+   
+ 
+  
   def update
     @artist_photo = ArtistPhoto.find_by_urlname(params[:id])
 
@@ -76,8 +70,8 @@ class ArtistPhotosController < ApplicationController
     end
   end
 
-  # DELETE /artist_photos/1
-  # DELETE /artist_photos/1.xml
+
+  
   def destroy
     @artist_photo = ArtistPhoto.find_by_urlname(params[:id])
     @artist_photo.destroy
@@ -88,6 +82,7 @@ class ArtistPhotosController < ApplicationController
     end
   end
   
+  # Show slider Photo
   def slider
   	@artist_photos = ArtistPhoto.find(:all, :conditions=>"set_slider='1'")
   	@title = "slider"

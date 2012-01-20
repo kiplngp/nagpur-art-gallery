@@ -1,10 +1,14 @@
 class ApplicationController < ActionController::Base
+  
   helper :all
   protect_from_forgery
+  
   filter_parameter_logging :password
+  
   include AuthenticatedSystem
   Time.zone = 'Central Time (US & Canada)'
   
+  # Code for Search engine optimization
   before_filter :meta_defaults
   private
 
@@ -14,6 +18,7 @@ class ApplicationController < ActionController::Base
     @meta_description = "Buy art – buy original fine art from juried artists. Affordable art for sale, a fine art gallery experience, and a satisfaction guarantee!"
   end
   
+  # Check current Action and controller
   helper_method :current_action, :current_controller
   
   def current_action
